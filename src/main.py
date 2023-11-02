@@ -6,6 +6,7 @@ from generate_script_js import generate_script_js
 from generate_uploadImage_js import generate_uploadImage_js
 from generate_style_css import generate_style_css
 from generate_gallery_editor_php import generate_gallery_editor_php
+from generate_gallery_php import generate_gallery_php
 
 def generate_files():
     directory_path = directory_var.get()
@@ -13,16 +14,16 @@ def generate_files():
     primary_color = color_entry2.get()
     main_domain = main_domain_entry.get()
     full_body_tag = full_body_tag_entry.get("1.0", "end-1c")
+    gallery_title = gallery_title_entry.get()
 
-
-
-    if all([directory_path, main_domain, full_body_tag, bg_color, primary_color]):
+    if all([directory_path, main_domain, full_body_tag, gallery_title, bg_color, primary_color]):
         # Generate tree path
         generate_arbo(directory_path)
         generate_script_js(directory_path)
         generate_uploadImage_js(directory_path)
         generate_style_css(directory_path, bg_color, primary_color)
         generate_gallery_editor_php(directory_path, main_domain, full_body_tag)
+        generate_gallery_php(directory_path, main_domain, full_body_tag, gallery_title)
         
         result_label.config(text="Gallery files have been generated.")
 
@@ -65,6 +66,11 @@ main_domain_label = tk.Label(app, text="Enter the main domain (e.g. dariusdev.fr
 main_domain_label.pack()
 main_domain_entry = tk.Entry(app)
 main_domain_entry.pack()
+
+gallery_title_label = tk.Label(app, text="Enter the title of the gallery page (e.g. DariusDev - Gallery) :")
+gallery_title_label.pack()
+gallery_title_entry = tk.Entry(app)
+gallery_title_entry.pack()
 
 full_body_tag_label = tk.Label(app, text="Full Body tag (e.g. <body style=...>) :")
 full_body_tag_label.pack()
