@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import filedialog
 from generate_arbo import generate_arbo
+from generate_script_js import generate_script_js
 
 def generate_files():
     directory_path = directory_var.get()
@@ -8,6 +9,7 @@ def generate_files():
     if all([directory_path]):
         # Generate tree path
         generate_arbo(directory_path)
+        generate_script_js(directory_path)
         
         result_label.config(text="Gallery files have been generated.")
 
