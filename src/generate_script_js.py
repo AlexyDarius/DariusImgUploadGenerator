@@ -7,7 +7,7 @@ def generate_script_js(directory_path):
             let imageId = button.getAttribute('data-image-id');
 
             // Ask for confirmation
-            let confirmation = confirm('Are you sure you want to delete this image?');
+            let confirmation = confirm('Voulez-vous vraimetn supprimer cette image ?');
             if (confirmation) {{
                 // User clicked "OK" in the confirmation dialog, proceed with deletion
                 let xhr = new XMLHttpRequest();
@@ -18,7 +18,7 @@ def generate_script_js(directory_path):
                         imageBox.remove();
                     }} else if (xhr.readyState === 4) {{
                         // Handle error if needed
-                        console.error("Image deletion failed.");
+                        console.error("Impossible de supprimer l'image.");
                     }}
                 }};
 
@@ -63,7 +63,7 @@ def generate_script_js(directory_path):
                         editContainer.style.display = 'none';
                     }} else if (xhr.readyState === 4) {{
                         // Handle error if needed
-                        console.error("Legend update failed.");
+                        console.error("Impossible d'éditer la légende");
                     }}
                 }};
 
