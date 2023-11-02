@@ -1,7 +1,7 @@
 def generate_gallery_displayer_php(directory_path, website):
     php_code = f'''<?php
 // Connect to the MySQL database (adjust the connection details as per your configuration)
-$conn = new mysqli("localhost", $_SERVER['DB_{website}_USERNAME'], "$_SERVER['DB_{website}_PASSWORD']", "$_SERVER['DB_{website}_DB']");
+$conn = new mysqli("localhost", $_SERVER['DB_{website}_USERNAME'], $_SERVER['DB_{website}_PASSWORD'], $_SERVER['DB_{website}_DB']);
 if ($conn->connect_error) {{
     die("Connection failed: " . $conn->connect_error);
 }}
@@ -12,7 +12,7 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {{
     while ($row = $result->fetch_assoc()) {{
-        $imagePath = "images/" . $row['filename'];
+        $imagePath = "modules/galleryimages/" . $row['filename'];
         $legend = $row['legend'];
         
         echo "<div class='image-box'>";

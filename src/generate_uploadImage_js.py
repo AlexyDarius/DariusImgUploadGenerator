@@ -43,7 +43,7 @@ def generate_uploadImage_js(directory_path):
     }};
 
     // Open a POST request to the server
-    xhr.open('POST', 'back_office.php', true);
+    xhr.open('POST', 'gallery-editor.php', true);
 
     // Send the form data as the request body
     xhr.send(formData);

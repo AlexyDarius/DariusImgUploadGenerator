@@ -1,6 +1,7 @@
 def generate_gallery_editor_php(directory_path, main_domain, full_body_tag):
     php_code = f'''<?php
-include "https://{main_domain}/includes/head.php"
+require $_SERVER['DOCUMENT_ROOT']. '/modules/auth/checker.php';
+include $_SERVER['DOCUMENT_ROOT']. '/includes/head.php'
 ?>
 
     <title>Votre interface de gestion de galerie</title>
@@ -8,14 +9,11 @@ include "https://{main_domain}/includes/head.php"
 </head>
 {full_body_tag}
 <?php
-
-require $_SERVER['DOCUMENT_ROOT']. '/modules/auth/checker.php';
 require $_SERVER['DOCUMENT_ROOT']. '/modules/gallery/requires/upload_image.php';
-
 ?>
 
 <?php
-include "https://{main_domain}/includes/navbar.php"
+include $_SERVER['DOCUMENT_ROOT']. '/includes/navbar.php'
 ?>
 
     <header>
@@ -51,7 +49,7 @@ require $_SERVER['DOCUMENT_ROOT']. '/modules/gallery/requires/back_office_displa
     <script src="js/uploadImage.js"></script>
 
 <?php
-include "https://{main_domain}/includes/footer.php"
+include $_SERVER['DOCUMENT_ROOT']. '/includes/footer.php'
 ?>
 
 '''

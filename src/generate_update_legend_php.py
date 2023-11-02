@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {{
     $editedLegend = $_POST['legend'];
 
     // Update the database with the new legend (replace with your database update code)
-    $conn = new mysqli("localhost", $_SERVER['DB_{website}_USERNAME'], "$_SERVER['DB_{website}_PASSWORD']", "$_SERVER['DB_{website}_DB']");
+    $conn = new mysqli("localhost", $_SERVER['DB_{website}_USERNAME'], $_SERVER['DB_{website}_PASSWORD'], $_SERVER['DB_{website}_DB']);
 
     // Ensure you use prepared statements to prevent SQL injection
     $sql = "UPDATE {website}_gallery SET legend = ? WHERE id = ?";

@@ -1,6 +1,6 @@
 def generate_gallery_php(directory_path, main_domain, full_body_tag, gallery_title):
     php_code = f'''<?php
-include "https://{main_domain}/includes/head.php"
+include $_SERVER['DOCUMENT_ROOT']. '/includes/head.php'
 ?>
 
     <title>{gallery_title}</title>
@@ -8,7 +8,7 @@ include "https://{main_domain}/includes/head.php"
 </head>
 {full_body_tag}
 <?php
-include "https://{main_domain}/includes/navbar.php"
+include $_SERVER['DOCUMENT_ROOT']. '/includes/navbar.php'
 ?>
 
     <header>
@@ -23,8 +23,10 @@ include "https://{main_domain}/includes/navbar.php"
 require $_SERVER['DOCUMENT_ROOT']. 'modules/gallery/requires/gallery_displayer.php';
 ?>
 
+    </div>
+
 <?php
-include "https://{main_domain}/includes/footer.php"
+include $_SERVER['DOCUMENT_ROOT']. '/includes/footer.php'
 ?>
 '''
 
