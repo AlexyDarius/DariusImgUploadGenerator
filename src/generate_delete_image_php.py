@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['image_id'])) {{
         }}
 
         // Delete the database entry
-        $sql = "DELETE FROM images WHERE id = ?";
+        $sql = "DELETE FROM {website}_gallery WHERE id = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("i", $imageId);
         $stmt->execute();
