@@ -12,7 +12,7 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {{
     while ($row = $result->fetch_assoc()) {{
-        $imagePath = "modules/galleryimages/" . $row['filename'];
+        $imagePath = "modules/gallery/images/" . $row['filename'];
         $legend = $row['legend'];
         
         echo "<div class='image-box'>";
