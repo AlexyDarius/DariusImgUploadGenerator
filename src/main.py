@@ -12,6 +12,7 @@ from generate_venv import generate_venv
 from generate_delete_image_php import generate_delete_image_php
 from generate_gallery_displayer_php import generate_gallery_displayer_php
 from generate_update_legend_php import generate_update_legend_php
+from generate_upload_image_php import generate_upload_image_php
 
 def generate_files():
     directory_path = directory_var.get()
@@ -40,6 +41,7 @@ def generate_files():
         generate_delete_image_php(directory_path, website)
         generate_gallery_displayer_php(directory_path, website)
         generate_update_legend_php(directory_path, website)
+        generate_upload_image_php(directory_path, website)
         
         result_label.config(text="Gallery files have been generated.")
 
