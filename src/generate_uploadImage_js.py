@@ -37,7 +37,7 @@ def generate_uploadImage_js(directory_path):
                 form.reset(); // Clear the form
             }} else {{
                 // Image upload failed
-                document.getElementById('status-message').textContent = 'Impossible de télécharger l'image. Réessayez.';
+                document.getElementById('status-message').textContent = "Impossible de télécharger l'image. Réessayez.";
             }}
         }}
     }};
