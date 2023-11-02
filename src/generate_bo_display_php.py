@@ -1,13 +1,13 @@
 def generate_bo_display_php(directory_path, website):
     php_code = f'''<?php
 // Connect to the MySQL database (adjust the connection details as per your configuration)
-$conn = new mysqli("localhost", $_SERVER['DB_{website}_USERNAME'], "$_SERVER['DB_{website}_PASSWORD']", "$_SERVER['DB_{website}_GALLERY']");
+$conn = new mysqli("localhost", $_SERVER['DB_{website}_USERNAME'], "$_SERVER['DB_{website}_PASSWORD']", "$_SERVER['DB_{website}_DB']");
 if ($conn->connect_error) {{
     die("Connection failed: " . $conn->connect_error);
 }}
 
 // Retrieve image information from the database
-$sql = "SELECT filename, legend, id FROM images ORDER BY upload_date DESC";
+$sql = "SELECT filename, legend, id FROM {website}_gallery ORDER BY upload_date DESC";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {{

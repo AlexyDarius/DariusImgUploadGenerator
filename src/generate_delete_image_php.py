@@ -8,13 +8,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['image_id'])) {{
     $imageId = $_POST['image_id'];
 
     // Connect to the MySQL database
-    $conn = new mysqli("localhost", $_SERVER['DB_{website}_USERNAME'], "$_SERVER['DB_{website}_PASSWORD']", "$_SERVER['DB_{website}_GALLERY']");
+    $conn = new mysqli("localhost", $_SERVER['DB_{website}_USERNAME'], "$_SERVER['DB_{website}_PASSWORD']", "$_SERVER['DB_{website}_DB']");
     if ($conn->connect_error) {{
         die("Connection failed: " . $conn->connect_error);
     }}
 
     // Retrieve the image filename from the database
-    $sql = "SELECT filename FROM images WHERE id = ?";
+    $sql = "SELECT filename FROM {website}_gallery WHERE id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $imageId);
     $stmt->execute();
