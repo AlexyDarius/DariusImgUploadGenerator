@@ -8,6 +8,7 @@ from generate_style_css import generate_style_css
 from generate_gallery_editor_php import generate_gallery_editor_php
 from generate_gallery_php import generate_gallery_php
 from generate_bo_display_php import generate_bo_display_php
+from generate_venv import generate_venv
 
 def generate_files():
     directory_path = directory_var.get()
@@ -16,6 +17,8 @@ def generate_files():
     main_domain = main_domain_entry.get()
     full_body_tag = full_body_tag_entry.get("1.0", "end-1c")
     gallery_title = gallery_title_entry.get()
+    db_username = db_username_entry.get()
+    db_password = db_password_entry.get()
 
     parts = main_domain.split(".")
 
@@ -30,6 +33,7 @@ def generate_files():
         generate_gallery_editor_php(directory_path, main_domain, full_body_tag)
         generate_gallery_php(directory_path, main_domain, full_body_tag, gallery_title)
         generate_bo_display_php(directory_path, website)
+        generate_venv(directory_path, website, db_username, db_password)
         
         result_label.config(text="Gallery files have been generated.")
 
@@ -82,6 +86,16 @@ full_body_tag_label = tk.Label(app, text="Full Body tag (e.g. <body style=...>) 
 full_body_tag_label.pack()
 full_body_tag_entry = tk.Text(app, width=50, height=5)
 full_body_tag_entry.pack()
+
+db_username_label = tk.Label(app, text="Enter the username for database :")
+db_username_label.pack()
+db_username_entry = tk.Entry(app)
+db_username_entry.pack()
+
+db_password_label = tk.Label(app, text="Enter the password for database :")
+db_password_label.pack()
+db_password_entry = tk.Entry(app)
+db_password_entry.pack()
 
 # Create an Entry widget for entering color in hex format
 color_entry_label = tk.Label(app, text="Enter bg color of the buttons (#hex format) :")
