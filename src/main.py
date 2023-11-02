@@ -5,19 +5,24 @@ from generate_arbo import generate_arbo
 from generate_script_js import generate_script_js
 from generate_uploadImage_js import generate_uploadImage_js
 from generate_style_css import generate_style_css
+from generate_gallery_editor_php import generate_gallery_editor_php
 
 def generate_files():
     directory_path = directory_var.get()
     bg_color = color_entry1.get()
     primary_color = color_entry2.get()
+    main_domain = main_domain_entry.get()
+    full_body_tag = full_body_tag_entry.get("1.0", "end-1c")
 
 
-    if all([directory_path, bg_color, primary_color]):
+
+    if all([directory_path, main_domain, full_body_tag, bg_color, primary_color]):
         # Generate tree path
         generate_arbo(directory_path)
         generate_script_js(directory_path)
         generate_uploadImage_js(directory_path)
         generate_style_css(directory_path, bg_color, primary_color)
+        generate_gallery_editor_php(directory_path, main_domain, full_body_tag)
         
         result_label.config(text="Gallery files have been generated.")
 
@@ -56,9 +61,19 @@ directory_entry.pack()
 select_directory_button = tk.Button(app, text="Browse", command=select_directory)
 select_directory_button.pack()
 
+main_domain_label = tk.Label(app, text="Enter the main domain (e.g. dariusdev.fr, without www. !) :")
+main_domain_label.pack()
+main_domain_entry = tk.Entry(app)
+main_domain_entry.pack()
+
+full_body_tag_label = tk.Label(app, text="Full Body tag (e.g. <body style=...>) :")
+full_body_tag_label.pack()
+full_body_tag_entry = tk.Text(app, width=50, height=5)
+full_body_tag_entry.pack()
+
 # Create an Entry widget for entering color in hex format
-cookie_entry_label = tk.Label(app, text="Enter bg color of the cookie pop-up (#hex format) :")
-cookie_entry_label.pack()
+color_entry_label = tk.Label(app, text="Enter bg color of the buttons (#hex format) :")
+color_entry_label.pack()
 color_entry1 = tk.Entry(app)
 color_entry1.pack()
 
@@ -67,8 +82,8 @@ color_picker_button = tk.Button(app, text="Or use color picker", command=open_co
 color_picker_button.pack()
 
 # Create an Entry widget for entering color in hex format
-cookie_entry_label = tk.Label(app, text="Enter primary color of the cookie pop-up (#hex format) :")
-cookie_entry_label.pack()
+color_entry_label = tk.Label(app, text="Enter primary color of the buttons (#hex format) :")
+color_entry_label.pack()
 color_entry2 = tk.Entry(app)
 color_entry2.pack()
 
