@@ -20,7 +20,7 @@ include $_SERVER['DOCUMENT_ROOT']. '/includes/navbar.php'
     <div id="image-container">
 
 <?php
-require $_SERVER['DOCUMENT_ROOT']. 'modules/gallery/requires/gallery_displayer.php';
+require $_SERVER['DOCUMENT_ROOT']. '/modules/gallery/requires/gallery_displayer.php';
 ?>
 
     </div>
