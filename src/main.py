@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import filedialog
 from generate_arbo import generate_arbo
 from generate_script_js import generate_script_js
+from generate_uploadImage_js import generate_uploadImage_js
 
 def generate_files():
     directory_path = directory_var.get()
@@ -10,6 +11,7 @@ def generate_files():
         # Generate tree path
         generate_arbo(directory_path)
         generate_script_js(directory_path)
+        generate_uploadImage_js(directory_path)
         
         result_label.config(text="Gallery files have been generated.")
 
@@ -37,6 +39,9 @@ directory_entry.pack()
 
 select_directory_button = tk.Button(app, text="Browse", command=select_directory)
 select_directory_button.pack()
+
+blank_label = tk.Label(app, text="")
+blank_label.pack()
 
 generate_button = tk.Button(app, text="Generate", command=generate_files)
 generate_button.pack()
