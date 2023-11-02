@@ -1,7 +1,7 @@
 def generate_update_legend_php(directory_path, website):
     php_code = f'''<?php
 
-require $_SERVER['DOCUMENT_ROOT']. '/gallery/auth/checker.php';
+require $_SERVER['DOCUMENT_ROOT']. '/modules/gallery/auth/checker.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {{
     // Get the image ID and edited legend from the POST data
