@@ -52,3 +52,4 @@ def generate_uploadImage_js(directory_path):
 
     with open(f"{directory_path}/gallery/js/uploadImage.js", "w") as js_file:
         js_file.write(js_code)
+        print("uploadImage.js generated !")

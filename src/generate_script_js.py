@@ -89,3 +89,4 @@ def generate_script_js(directory_path):
 
     with open(f"{directory_path}/gallery/js/script.js", "w") as js_file:
         js_file.write(js_code)
+        print("script.js generated !")

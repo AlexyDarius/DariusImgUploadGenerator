@@ -9,6 +9,7 @@ from generate_gallery_editor_php import generate_gallery_editor_php
 from generate_gallery_php import generate_gallery_php
 from generate_bo_display_php import generate_bo_display_php
 from generate_venv import generate_venv
+from generate_delete_image_php import generate_delete_image_php
 
 def generate_files():
     directory_path = directory_var.get()
@@ -24,7 +25,7 @@ def generate_files():
 
     website = parts[0]
 
-    if all([directory_path, main_domain, full_body_tag, gallery_title, bg_color, primary_color]):
+    if all([directory_path, main_domain, full_body_tag, gallery_title, bg_color, primary_color, db_username, db_password]):
         # Generate tree path
         generate_arbo(directory_path)
         generate_script_js(directory_path)
@@ -34,6 +35,7 @@ def generate_files():
         generate_gallery_php(directory_path, main_domain, full_body_tag, gallery_title)
         generate_bo_display_php(directory_path, website)
         generate_venv(directory_path, website, db_username, db_password)
+        generate_delete_image_php(directory_path, website)
         
         result_label.config(text="Gallery files have been generated.")
 

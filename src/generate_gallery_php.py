@@ -30,3 +30,4 @@ include "https://{main_domain}/includes/footer.php"
 
     with open(f"{directory_path}/gallery.php", "w") as php_file:
         php_file.write(php_code)
+        print("gallery.php generated !")

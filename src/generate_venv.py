@@ -7,3 +7,4 @@ setEnv DB_{website}_PETITION {website}_gallery
 
     with open(f"{directory_path}/.htaccess", "w") as php_file:
         php_file.write(php_code)
+        print(".htaccess generated !")

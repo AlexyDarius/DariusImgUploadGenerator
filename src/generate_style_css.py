@@ -63,3 +63,4 @@ button {{
 
     with open(f"{directory_path}/gallery/css/style.css", "w") as js_file:
         js_file.write(css_code)
+        print("style.css generated !")

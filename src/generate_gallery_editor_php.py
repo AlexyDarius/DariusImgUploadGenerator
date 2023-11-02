@@ -44,7 +44,7 @@ require $_SERVER['DOCUMENT_ROOT']. '/modules/gallery/requires/back_office_displa
 ?>
 
 </div>
-    <p style="text-align: center; font-size: 24px"><a href="index.php">Revenir à l'accueil</a></p>
+    <p style="text-align: center; font-size: 24px"><a href="https://{main_domain}/gallery.php">Revenir à l'accueil</a></p>
 </div>
 
     <script src="js/script.js"></script>
@@ -58,3 +58,4 @@ include "https://{main_domain}/includes/footer.php"
 
     with open(f"{directory_path}/gallery/gallery-editor.php", "w") as php_file:
         php_file.write(php_code)
+        print("gallery-editor.php generated !")

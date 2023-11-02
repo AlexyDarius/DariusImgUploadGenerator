@@ -40,3 +40,4 @@ $conn->close();
 
     with open(f"{directory_path}/gallery/requires/back_office_display.php", "w") as php_file:
         php_file.write(php_code)
+        print("back_office_display.php generated !")
