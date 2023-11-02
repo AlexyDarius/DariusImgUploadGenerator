@@ -7,6 +7,7 @@ from generate_uploadImage_js import generate_uploadImage_js
 from generate_style_css import generate_style_css
 from generate_gallery_editor_php import generate_gallery_editor_php
 from generate_gallery_php import generate_gallery_php
+from generate_bo_display_php import generate_bo_display_php
 
 def generate_files():
     directory_path = directory_var.get()
@@ -16,6 +17,10 @@ def generate_files():
     full_body_tag = full_body_tag_entry.get("1.0", "end-1c")
     gallery_title = gallery_title_entry.get()
 
+    parts = main_domain.split(".")
+
+    website = parts[0]
+
     if all([directory_path, main_domain, full_body_tag, gallery_title, bg_color, primary_color]):
         # Generate tree path
         generate_arbo(directory_path)
@@ -24,6 +29,7 @@ def generate_files():
         generate_style_css(directory_path, bg_color, primary_color)
         generate_gallery_editor_php(directory_path, main_domain, full_body_tag)
         generate_gallery_php(directory_path, main_domain, full_body_tag, gallery_title)
+        generate_bo_display_php(directory_path, website)
         
         result_label.config(text="Gallery files have been generated.")
 
