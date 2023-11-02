@@ -32,6 +32,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {{
 
 '''
 
-    with open(f"{directory_path}/gallery/update_legend.php", "w") as php_file:
+    with open(f"{directory_path}/gallery/requires/update_legend.php", "w") as php_file:
         php_file.write(php_code)
         print("update_legend.php generated !")

@@ -49,6 +49,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['image'])) {{
 
 '''
 
-    with open(f"{directory_path}/gallery/upload_image.php", "w") as php_file:
+    with open(f"{directory_path}/gallery/requires/upload_image.php", "w") as php_file:
         php_file.write(php_code)
         print("upload_image.php generated !")

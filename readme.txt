@@ -11,3 +11,6 @@ CREATE TABLE `{website}_gallery` (
   `legend` varchar(255) NOT NULL,
   `upload_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+**Add your db key at the beginning of db name
