@@ -7,7 +7,7 @@ def generate_script_js(directory_path):
             let imageId = button.getAttribute('data-image-id');
 
             // Ask for confirmation
-            let confirmation = confirm('Voulez-vous vraimetn supprimer cette image ?');
+            let confirmation = confirm('Voulez-vous vraiment supprimer cette image ?');
             if (confirmation) {{
                 // User clicked "OK" in the confirmation dialog, proceed with deletion
                 let xhr = new XMLHttpRequest();
