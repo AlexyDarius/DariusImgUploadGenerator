@@ -5,7 +5,7 @@ Make sure you have a database "{website}_db" in your databases
 Create the table for the gallery inside the database: 
 
 CREATE TABLE `{website}_gallery` (
-  `id` int(11) NOT NULL,
+  `id` int(11) AUTO_INCREMENT PRIMARY KEY,
   `filename` varchar(255) NOT NULL,
   `uploaded_by` varchar(255) NOT NULL,
   `legend` varchar(255) NOT NULL,
@@ -13,4 +13,4 @@ CREATE TABLE `{website}_gallery` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-**Add your db key at the beginning of db name
+**Add your cpanel username at the beginning of db name
