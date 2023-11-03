@@ -68,7 +68,7 @@ def open_color_picker2():
     color_entry2.insert(0, color)
 
 app = tk.Tk()
-app.title("Darius GA Cookie Generator")
+app.title("DariusDev Gallery Generator")
 
 directory_var = tk.StringVar()
 
