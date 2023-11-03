@@ -1,1 +1,1 @@
-Darius Img Upload generator
+DariusDev Img Upload module generator
