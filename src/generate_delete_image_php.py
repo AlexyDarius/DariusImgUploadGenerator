@@ -1,7 +1,7 @@
 def generate_delete_image_php(directory_path, website):
     php_code = f'''<?php
 
-require $_SERVER['DOCUMENT_ROOT']. '/modules/gallery/auth/checker.php';
+require $_SERVER['DOCUMENT_ROOT']. '/modules/auth/checker.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['image_id'])) {{
     // Retrieve the image ID from the POST request
